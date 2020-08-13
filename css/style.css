@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.spacer {
+  height: 8vh;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 5;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 70%;
+  height: 8vh;
+}
+
+.logo {
+  height: 98%;
+}
+
+.nav-links {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  list-style: none;
+  z-index: 5;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: rgb(72, 155, 241);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* create underline on nav links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%) scaleX(0);
+  -webkit-transform: translateX(-50%) scaleX(0);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(72, 155, 241);
+  -webkit-transition: transform 250ms;
+  transition: transform 250ms;
+}
+
+/* Animate underline on nav links */
+.nav-link:hover::after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(72, 155, 241);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Animate side nav */
+.nav-active {
+  transform: translateX(0%) !important;
+}
+
+/* Animate Burger Menu */
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.banner {
+  background-image: url(../images/solidworks-banner.jpg);
+  height: 42vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -5;
+}
+
+.banner-title {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  color: white;
+  bottom: 30%;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  font-size: 25px;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 70%;
+}
+
+.title {
+  background-image: linear-gradient(90deg, rgb(72, 155, 241), white);
+  padding: 10px;
+  margin: 30px 10px;
+  border-radius: 20px;
+}
+
+.title-text {
+  font-size: 40px;
+  color: white;
+  letter-spacing: 3px;
+  padding-left: 10px;
+}
+
+/* offset the hashtag link below the fixed nav */
+.portfolio:before, .about-me:before{
+  display: block; 
+  content: " "; 
+  margin-top: -8vh; 
+  height: 8vh; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+.recent-work {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.personal-work {
+  display: flex;
+}
+
+.project-text {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+hr {
+  display: none;
+  border: 1px solid rgb(72, 155, 241);
+  width: 90%;
+  margin: 0 auto 20px auto;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.recent-container .image, .personal-container .image {
+  width: 100%;
+  display: block;
+}
+
+.recentPrev, .recentNext, .personalPrev, .personalNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  margin-top: 22px;
+  color: rgb(72, 155, 241);
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 0px 3px 3px 0px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+.recentNext, .personalNext {
+  right: 0px;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.recentPrev:hover, .recentNext:hover, .personalPrev:hover, .personalNext:hover {
+  color: white;
+  background-color: rgb(72, 155, 241);
+}
+
+.fade {
+  animation: fade 0.3s ease-in-out;
+}
+
+.about-me {
+  text-align: justify;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+footer {
+  position: relative;
+  margin-top: 30px;
+  height: 188px;
+  background-color: rgb(72, 155, 241);
+}
+
+.footer-logo {
+  position: absolute;
+  height: 100%;
+}
+
+.contact {
+  position: relative;
+  color: white;
+  width: 320px;
+  margin: auto;
+  padding: 20px;
+}
+
+.contact h1 {
+  margin-bottom: 10px;
+}
+
+.contact ul {
+  list-style: none;
+}
+
+.contact ul li {
+  display: flex;
+  align-items: center;
+}
+
+.contact ul a {
+  color: white;
+}
+
+i.fas, i.fab {
+  font-size: 30px;
+  margin: 0 10px 0 0;
+}
+
+/* Animate Nav Links */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .recent-work, .personal-work {
+    display: block;
+  }
+
+  .project-text {
+    margin-bottom: 10px;
+  }
+
+  hr {
+    display: block;
+  }
+
+  .contact {
+    margin: 0;
+    float: right;
+  }
+}
+
+/* Mobile and tablet */
+@media screen and (max-width: 830px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-wrapper {
+    width: 90%;
+  }
+
+  .content-wrapper {
+    width: 100%;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: rgb(72, 155, 241);
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-link::after {
+    background-color: white;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .banner-title {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 590px) {
+  .footer-logo {
+    display: none;
+  }
+
+  .contact {
+    float: none;
+    margin: auto;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-height: 450px) {
+  .banner {
+    height: 92vh;
+  }
+}
